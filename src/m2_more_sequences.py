@@ -112,6 +112,7 @@ def shortest_string(strings):
             shortest_index = i
     return strings[shortest_index]
 
+
 def run_test_index_of_largest_number():
     """ Tests the   index_of_largest_number   function. """
     print()
@@ -184,9 +185,18 @@ def index_of_largest_number(numbers, n):
 
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    highest_i = 0
+    if n > len(numbers):
+        length = len(numbers)
+    else:
+        length = n
+    for i in range(length):
+        if numbers[highest_i] < numbers[i]:
+            highest_i = i
+    return highest_i
 
 
 # ----------------------------------------------------------------------
@@ -238,10 +248,14 @@ def number_of_stutters(s):
     Type hints:
        :type s: str
     """
-    # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # ---DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    total = 0
+    for i in range(1, len(s), 1):
+        if s[i] == s[i-1]:
+            total += 1
+    return total
 
 
 def run_test_is_palindrome():
@@ -312,7 +326,7 @@ def is_palindrome(s):
       :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
@@ -321,6 +335,13 @@ def is_palindrome(s):
     #   above are particularly good examples to work by hand.
     ####################################################################
     # ------------------------------------------------------------------
+    string_backwards = ''
+    for i in range(len(s)-1, -1, -1):
+        string_backwards = string_backwards + s[i]
+    if string_backwards == s:
+        return True
+    else:
+        return False
 
 
 # ----------------------------------------------------------------------
@@ -379,9 +400,14 @@ def count_same(sequence1, sequence2):
       type: sequence2: tuple or list or string
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    total = 0
+    for i in range(len(sequence1)):
+        if sequence1[i] == sequence2[i]:
+            total += 1
+    return total
 
 
 # ----------------------------------------------------------------------
