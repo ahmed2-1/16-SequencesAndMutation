@@ -108,7 +108,7 @@ def shortest_string(strings):
     # ------------------------------------------------------------------
     shortest_index = 0
     for i in range(len(strings)):
-        if len(strings[i])<len(strings[shortest_index]):
+        if len(strings[i]) < len(strings[shortest_index]):
             shortest_index = i
     return strings[shortest_index]
 
